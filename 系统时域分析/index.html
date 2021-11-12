@@ -6,13 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>系统时域分析 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:title" content="系统时域分析">
+<meta property="og:url" content="http://example.com/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-12T02:15:37.000Z">
+<meta property="article:modified_time" content="2021-11-12T02:15:37.979Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,87 +152,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-系统时域分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/">系统时域分析</a>
+    <h1 class="article-title" itemprop="name">
+      系统时域分析
     </h1>
   
 
         
-        <a href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2021-11-12T02:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
+        <a href="/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/index.html" class="archive-article-date">
+  	<time datetime="2021-11-12T02:15:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>线性系统时域求解主要利用卷积积分。难点是<strong>理解卷积</strong>和<strong>求解冲激响应</strong>。如果已知系统的冲激响应那么利用卷积求系统对信号的响应不受任何条件限制，也就是说卷积积分求响应限制条件少。</p>
-<p>以下分两个部分介绍时域求解响应，<strong>卷积积分</strong>、<strong>冲激响应</strong>。</p>
-<h2 id="卷积积分"><a href="#卷积积分" class="headerlink" title="卷积积分"></a>卷积积分</h2><p>从直观的角度来所，世间万物所处的状态都与其历史状态和历史受力有关（排除极限世界，<strong>微观</strong>、<strong>宏观</strong>）。例如：你现在资产与你历史资产、每月盈余有关。汽车当前的位置与初始位置、每一时刻的加速度有关。等等一切现象好像都可以总结为这种模式，即当前状态与初始状态、过程受力相关（<strong>不要理解为物理受力了，博主词穷了😂！</strong>）。线性系统更是如此了。线性系统除了以上属性外还有一个最重要的特性：<strong>线性</strong>（😂好像和没说一样）。根据线性的定义可以得出以下结论：</p>
-<p>设：</p>
-<script type="math/tex; mode=display">e_1(t)->r_1(t)</script><script type="math/tex; mode=display">e_2(t)->r_2(t)</script><p>得：</p>
-<script type="math/tex; mode=display">k_1e_1(t)->k_1r_1(t)</script><script type="math/tex; mode=display">k_2e_2(t)->k_2r_2(t)</script><script type="math/tex; mode=display">k_1e_1(t) + k_2e_2(t)->k_1r_1(t) + k_2r_2(t)</script><p>由此联想一种线性系统（最后一次用全称了，以下称为<strong>系统</strong>）与“<strong>输入信号</strong>”无关求响应的方法。先求得系统对单位信号的响应，然后用当前信号的幅值乘以单位信号响应不就是系统的响应嘛。问题是怎么样的信号才算是单位信号，单位信号应该具备什么样的特性？</p>
-<script type="math/tex; mode=display">e_u(\tau)->r_u(\tau)\tag{1}</script><script type="math/tex; mode=display">e(0)e_u(\tau)->e(0)r_u(\tau)\tag{2}</script><script type="math/tex; mode=display">e(t_0)e_u(\tau-t_0)->e(t_0)r_u(\tau-t_0)\tag{3}</script><p><em>公式1：单位信号对应的单位响应，假设单位信号是从0时刻开始的根据因果系统响应也必须从0时刻开始，0以前的响应为0或者0以前的响应是和0时刻开始的单位信号无关。从公式看就是 $\tau &gt; 0$。</em></p>
-<p><em>公式2：根据上面的分析可以知道系统对0时刻的单位信号的响应$r(\tau)$，系统呈线性那么单位信号乘以0时刻输入信号的幅值，就可以得到输入信号只有0时刻起作用时系统的响应$e(0)r_u(\tau)$。</em></p>
-<p><em>公式3：在时间轴移动单位信号就可以得到输入信号不同时刻的“<strong>响应</strong>”（该响应是只有这一时刻输入信号有效的响应，输入信号其他时刻为0的响应）。根据线性规则也可以得到所有时刻的响应（<strong>只有该时刻有效的响应</strong>）包络都是一致的，只是幅度有差别，幅度为输入信号的大小。</em></p>
-<p>根据上面的分析，可以得出几点单位信号应该具备的特点，首先单位信号应该只在0时刻附近有效，其他时刻均为0，通过左右移动单位信号获得其他时刻的信号，写成数学表达式的话应该是：$\int _{-\infty} ^{+\infty} e_u(\tau)\cdot e(\tau)\mathrm{d} \tau = e(0)$.在根据这个表达式分析一下$e_u(t)$可得如下结果。</p>
-<script type="math/tex; mode=display">
-e_u(t)=\left\{
-\begin{aligned}
-  +\infty,t = 0\\
-  0 ， t \neq 0
-\end{aligned}\right.</script><p>$t \neq 0$时，$e_u(t) = 0$比较好理解，$t \neq 0$时，$e_u(t) = +\infty$是为了抵消$\mathrm{d} \tau$的影响。</p>
-
+        
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统，卷积积分，时域分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/信号与系统//" class="article-tag-list-link color1">信号与系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
       
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -250,83 +282,14 @@ e_u(t)=\left\{
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/12/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2021/11/12/hello-world/" class="archive-article-date">
-  	<time datetime="2021-11-12T01:58:20.552Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/12/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -349,7 +312,7 @@ e_u(t)=\left\{
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
