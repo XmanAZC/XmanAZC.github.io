@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>Tag: 系统动态指标 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E5%8A%A8%E6%80%81%E6%8C%87%E6%A0%87/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,503 +152,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-自动控制原理/bode图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Bode-图"><a href="#Bode-图" class="headerlink" title="Bode 图"></a>Bode 图</h1><p>幅频特性图和相频特性图。</p>
-<p>通过向量（虚轴的各个点是向量的终点）的角度可以非常直观的理解波特图。影响幅频特性由零点向量长度除以极点向量长度再乘以增益就可以得虚轴各点的幅度大小。</p>
-<ul>
-<li>单极点情况（惯性环节，稳定系统情况（T&gt;0）），单极点那么极点只能在实轴上，那么当jw</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/29/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/bode%E5%9B%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-数字信号处理/笔记1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="目录中看到的几个问题"><a href="#目录中看到的几个问题" class="headerlink" title="目录中看到的几个问题"></a>目录中看到的几个问题</h2><ul>
-<li>信号相关性？</li>
-<li>离散时间信号的能量谱密度</li>
-<li>相位函数</li>
-<li>反混叠滤波器</li>
-<li>Haar变换</li>
-<li>能量压缩</li>
-<li>FIR有限长滤波器是不是只能完成滑动加权功能？</li>
-<li>IIR无限长滤波器，IIR也可以看作一个系统，那么这个系统也需要满足收敛性，那么当时间趋于无穷时，IIR的冲激响应也必然趋于0，这和FIR又有什么区别呢？</li>
-<li>DTF，滑动变换与切片变化的区别，都有什么特性，工程中该用哪个？<h2 id="第一章-信号和信号处理"><a href="#第一章-信号和信号处理" class="headerlink" title="第一章 信号和信号处理"></a>第一章 信号和信号处理</h2>信号也已有一个或多个源产生，前一个为标量信号，后一个是向量信号。<br>自然产生的信号都是实信号，产生复信号需要用到<strong>希尔伯特变换</strong>，实数信号的傅里叶变换是一个，幅度偶对称，相位奇对称的复函数。傅里叶变换本质将一维时间信号，转换为二维时间、角速度信号（在复平面看就是一系列轨迹随时间，初始相角与幅度随$\omega$的同心圆，）。$\omega$、$-\omega$对应幅度相同，相角差$\pi$，所以如果存在一个系统能将$-\omega$或者$\omega$旋转$\pi$，那么就可以得到一个傅里叶变换只具有单边频谱（幅度增加一倍）的信号。</li>
-</ul>
-<p><strong>Amazing！</strong>正交频分复用，傅里叶变换将实信号转换为复数信号，将这个复数信号用复平面的极化坐标表示法，那么$\gamma = |H(j\omega)|,\theta = \phi$,可以在复平面用一个向量表示，从函数映射角度来说就是将一个复平面的虚轴$j\omega$向量映射到另一个复平面的向量。一般来说工程中只处理带限信号，那么这种映射就有了范围。经过公式推导可以的出两个信号可以同在一个频段传输。而且两个信号的相位并不会互相影响。</p>
-<p>范数：<br>$$||x||_p = ( \sum _{n=-\infty} ^{\infty} |x[n]|^p )^{\frac{1}{p}}$$</p>
-<p>范数1，绝对和，范数2，模方和根，范数无穷，模最大值。</p>
-<h3 id="抽样率变换"><a href="#抽样率变换" class="headerlink" title="抽样率变换"></a>抽样率变换</h3><p>对已知数字序列再进行数字抽样，如果抽样频率大于当前数字序列的采样频率，$R= \frac {F’}{F} &gt; 1$ 则称为内插，$R &lt; 1$ 则称为抽取。</p>
-<h3 id="牢记连续与离散的区别"><a href="#牢记连续与离散的区别" class="headerlink" title="牢记连续与离散的区别"></a>牢记连续与离散的区别</h3><p>$cos (\omega_c t)$与$cos(\omega_c n)$完全不一样，$n$只代表序列，不具备单位。$cos(\omega_c n)$呈现出的周期性和时间无关，只有确定了采样周期$T_s$才能确定$cos(\omega_c n)$离散信号的真正时间周期。$cos(\omega_c n)$只是具备周期的序列，而且这种周期不光呈现在序列上，也在离散频域上体现，$cos(\omega_c n)$与$cos((\omega_c*2\pi) n)$在序列上完全没有区别，所以说$cos(\omega_c n)$信号在频域上看，也是周期性的，$2\pi$就是频域上的周期。余弦信号是复指数信号的特例，所以离散复指数信号也是序列、频域均呈现周期性特质的信号。余弦信号，除了频域周期性外还具备角速度关于$\pi$对称的特性。例如：$cos(0.9\pi n)$与$cos(1.1\pi n)$在序列上完全没有区别。</p>
-<p>正弦信号，随着$\omega$从0增加到$\pi$，离散信号振动频率增加，$\omega$从$\pi$增加到$2\pi$，离散信号振动频率减小。$\pi$称为折叠频率。$\omega = 2\pi n$附近的信号称为低频信号，$\omega = \pi(2n + 1)$附近的信号称为高频信号。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/29/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/%E7%AC%94%E8%AE%B01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-信号与系统/系统时域分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>线性系统时域求解主要利用卷积积分。难点是<strong>理解卷积</strong>和<strong>求解冲激响应</strong>。如果已知系统的冲激响应那么利用卷积求系统对信号的响应不受任何条件限制，也就是说卷积积分求响应限制条件少。</p>
-<p>以下分两个部分介绍时域求解响应，<strong>卷积积分</strong>、<strong>冲激响应</strong>。</p>
-<h2 id="卷积积分"><a href="#卷积积分" class="headerlink" title="卷积积分"></a>卷积积分</h2><p>从直观的角度来所，世间万物所处的状态都与其历史状态和历史受力有关（排除极限世界，<strong>微观</strong>、<strong>宏观</strong>）。例如：你现在资产与你历史资产、每月盈余有关。汽车当前的位置与初始位置、每一时刻的加速度有关。等等一切现象好像都可以总结为这种模式，即当前状态与初始状态、过程受力相关（<strong>不要理解为物理受力了，博主词穷了😂！</strong>）。线性系统更是如此了。线性系统除了以上属性外还有一个最重要的特性：<strong>线性</strong>（😂好像和没说一样）。根据线性的定义可以得出以下结论：</p>
-<p>设：<br>$$e_1(t)-&gt;r_1(t)$$<br>$$e_2(t)-&gt;r_2(t)$$<br>得：<br>$$k_1e_1(t)-&gt;k_1r_1(t)$$<br>$$k_2e_2(t)-&gt;k_2r_2(t)$$<br>$$k_1e_1(t) + k_2e_2(t)-&gt;k_1r_1(t) + k_2r_2(t)$$</p>
-<p>由此联想一种线性系统（最后一次用全称了，以下称为<strong>系统</strong>）与“<strong>输入信号</strong>”无关求响应的方法。先求得系统对单位信号的响应，然后用当前信号的幅值乘以单位信号响应不就是系统的响应嘛。问题是怎么样的信号才算是单位信号，单位信号应该具备什么样的特性？<br>$$e_u(\tau)-&gt;r_u(\tau)\tag{1}$$<br>$$e(0)e_u(\tau)-&gt;e(0)r_u(\tau)\tag{2}$$<br>$$e(t_0)e_u(\tau-t_0)-&gt;e(t_0)r_u(\tau-t_0)\tag{3}$$<br><em>公式1：单位信号对应的单位响应，假设单位信号是从0时刻开始的根据因果系统响应也必须从0时刻开始，0以前的响应为0或者0以前的响应是和0时刻开始的单位信号无关。从公式看就是 $\tau &gt; 0$。</em></p>
-<p><em>公式2：根据上面的分析可以知道系统对0时刻的单位信号的响应$r(\tau)$，系统呈线性那么单位信号乘以0时刻输入信号的幅值，就可以得到输入信号只有0时刻起作用时系统的响应$e(0)r_u(\tau)$。</em></p>
-<p><em>公式3：在时间轴移动单位信号就可以得到输入信号不同时刻的“<strong>响应</strong>”（该响应是只有这一时刻输入信号有效的响应，输入信号其他时刻为0的响应）。根据线性规则也可以得到所有时刻的响应（<strong>只有该时刻有效的响应</strong>）包络都是一致的，只是幅度有差别，幅度为输入信号的大小。</em></p>
-<p>说了这么多那么什么信号才能作为单位信号使用呢？下面的信号可以吗？不可以的话为什么不可以呢？<br><img src="./%E5%8D%95%E4%BD%8D%E5%86%B2%E5%87%BB.jpg" alt="alt"><br>图片中只有0时刻有效值为1，其他时刻全为0。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/29/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%89%8D%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-11-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-24</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Matlab学习笔记/笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="信号处理函数"><a href="#信号处理函数" class="headerlink" title="信号处理函数"></a>信号处理函数</h1><h4 id="tf-分子向量，分母向量"><a href="#tf-分子向量，分母向量" class="headerlink" title="tf(分子向量，分母向量)"></a>tf(分子向量，分母向量)</h4><p>生成系统传输函数</p>
-<h4 id="z-p-k-tf2zp-分子向量，分母向量"><a href="#z-p-k-tf2zp-分子向量，分母向量" class="headerlink" title="[z,p,k]=tf2zp[分子向量，分母向量]"></a>[z,p,k]=tf2zp[分子向量，分母向量]</h4><p>对传递函数进行因式分解，z：零点向量，p：极点向量，k比例系数。<br>$$H(s)=k\frac{(s-z_1)(s-z_2)…(s-z_n)}{(s-p_1)(s-p_2)…(s-p_n)}$$</p>
-<h4 id="sys-zpk-z-p-k"><a href="#sys-zpk-z-p-k" class="headerlink" title="sys=zpk(z,p,k)"></a>sys=zpk(z,p,k)</h4><p>根据给定的z(零点向量),p(极点向量),k(比例系数)生成对应的传输函数，传输函数用极零点比例系数表示。</p>
-<h4 id="r-p-k-residue-分子向量，分母向量"><a href="#r-p-k-residue-分子向量，分母向量" class="headerlink" title="[r,p,k]=residue(分子向量，分母向量)"></a>[r,p,k]=residue(分子向量，分母向量)</h4><p>传输函数的部分分式展开，r：分子系数向量，p：极点向量，k：比例向量</p>
-<h3 id="rlocus，求根轨迹"><a href="#rlocus，求根轨迹" class="headerlink" title="rlocus，求根轨迹"></a>rlocus，求根轨迹</h3><h1 id="画图功能"><a href="#画图功能" class="headerlink" title="画图功能"></a>画图功能</h1><h3 id="画图的对象"><a href="#画图的对象" class="headerlink" title="画图的对象"></a>画图的对象</h3><h4 id="figure-object-figure-函数创建了一个此对象"><a href="#figure-object-figure-函数创建了一个此对象" class="headerlink" title="figure object,figure 函数创建了一个此对象"></a>figure object,figure 函数创建了一个此对象</h4><h4 id="axes-object，坐标轴对象"><a href="#axes-object，坐标轴对象" class="headerlink" title="axes object，坐标轴对象"></a>axes object，坐标轴对象</h4><h4 id="line-object，具体线对象"><a href="#line-object，具体线对象" class="headerlink" title="line object，具体线对象"></a>line object，具体线对象</h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/29/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自动控制原理/根轨迹" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E6%A0%B9%E8%BD%A8%E8%BF%B9/">根轨迹</a>
+      <a class="archive-article-title" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%89%8D%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/">自动控制原理</a>
     </h1>
   
 
-        
-        <a href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E6%A0%B9%E8%BD%A8%E8%BF%B9/" class="archive-article-date">
-  	<time datetime="2021-11-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="根轨迹"><a href="#根轨迹" class="headerlink" title="根轨迹"></a>根轨迹</h1><p>有理分式转移函数分母的根决定了系统的稳定新和响应模型。所以设计系统时调节转移函数分母多次函数的系数，使系统满足设计要求。讨论转移函数分两种情况，一种是开环转移函数，一种是闭环转移函数。<br>开环转移函数：<br>$$G(s)=K_g \frac{\Pi(s-z_i)}{\Pi(s-p_i)} \tag{1}$$<br>$$G(s)=\frac{1}{s^2 + ks + 1} \tag{2}$$<br>闭环转移函数（单位负反馈）：<br>$$T(s)=\frac{G(s)}{1+G(s)H(s)} \tag{3}$$<br>研究根轨迹，主要研究闭环根轨迹，即：$1+G(s)H(s) = 0$，但实际应用中更常见的是求开环根轨迹例如公式2，那么就需要将公式2转为闭环根轨迹的形式，变换过程如下：<br>$$s^2 + 1 + ks = 0$$<br>$$s^2 + 1 = -ks$$<br>$$k\frac{s}{s^2 + 1} = -1$$<br>$$G(s)H(s) = -1$$<br>如此我们可以将任意系数变为求，开环增益对根轨迹的影响。</p>
-<h2 id="根轨迹绘制原则"><a href="#根轨迹绘制原则" class="headerlink" title="根轨迹绘制原则"></a>根轨迹绘制原则</h2><ul>
-<li>根轨迹起始于开环极点，结束于开环零点或无穷远。</li>
-<li>根轨迹个数（闭环极点个数），取决于开环极点、零点个数中的最大值。</li>
-<li>实轴上的根轨迹，任选实轴上的一个点，以该点做垂直于实轴的线，这根线右边的极点、零点个数之和为奇数那么选取的这个实轴点是根轨迹的一点。反之则不是。</li>
-<li>根轨迹关于实轴对称。</li>
-<li>根轨迹除了两条根轨迹重合点外，不会出现相交点。再结合上一条对称原则，那么根轨迹的重合点只能存在于实轴上或共轭的出现。</li>
-<li>根轨迹与虚轴的交点，根据劳斯公式判断，求出K后带入$s^2$行计算可得$\omega$</li>
-<li>开环极点根之和与闭环极点根之和相等。</li>
-<li>渐近线规则, $\phi _a$ 渐近线与实轴角度，$\sigma _a$ 渐近线与实轴交点。<br>$$\phi _a=\frac{(2k+1)\pi}{n-m}   \tag{k=0,1,…,n-m-1}$$<br>$$\sigma _a=\frac{\sum _{i=1} ^{n} p_i - \sum _{j=1} ^{m} z_j}{n-m}$$</li>
-<li>根轨迹分离点，带入开环极零点，求解方程，取合适的 $d$。<br>$$\sum _{i=0} ^{n} \frac{1}{d-p_i} = \sum _{j=0} ^{m} \frac{1}{d-z_j}$$</li>
-</ul>
-<p>其他求辐角等原则不做讨论，公式太多意义不大，直接用matlab求解。</p>
-<h2 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h2><p>一般给出开环$G(s)$,系统为单位负反馈。设计系统时，输入技术要求比如：阻尼比，超调量，上升时间等。</p>
-<p>利用阻尼比可以确定极点扇形范围，找到主极点通过二阶系统近似，再加上上升时间这个条件就可以将扇形区域一分为二，再进一步选择。</p>
-<p>利用给定稳态误差，可以确定开环增益（n型系统）。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自动控制原理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">根轨迹</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/自动控制原理//" class="article-tag-list-link color2">自动控制原理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E6%A0%B9%E8%BD%A8%E8%BF%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自动控制原理/线性系统频域分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/">线性系统频域分析</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2021-11-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性系统频域分析"><a href="#线性系统频域分析" class="headerlink" title="线性系统频域分析"></a>线性系统频域分析</h1><p>在信号系统的学习中，频域分析主要由幅频特性和相频特性，<strong>自动控制怎么研究频域，除了幅频、相频特性还需要研究什么？</strong><br>回忆以下信号系统中的幅频和相频曲线。</p>
-<ul>
-<li>幅频特性<br>系统幅频特性通过波特图体现，横轴是角速度的对数值，纵轴是s平面虚轴上的点到零点距离连乘 比 虚轴上点到极点距离连乘，再乘以一个增益。<br>$$|H(j\omega)| = K \frac{\prod e^{iz_i \theta}}{e^{\prod ip\theta}} = K $$<br>$e^{iz_i \theta} = s-z_i$,$e^{ip_i \theta} = s-p_i$<h2 id="从复变函数角度理解转移函数"><a href="#从复变函数角度理解转移函数" class="headerlink" title="从复变函数角度理解转移函数"></a>从复变函数角度理解转移函数</h2>$$H(s) = k \frac{\prod _{i = 0} ^{n} (s-z_i)}{\prod _{j = 0} ^{m} (s-p_j)}$$<br>上式将s平面一个点，映射到了H(s)平面上的一个点。如果将s平面的虚轴上的点依次带入H(s)，也就是说将s平面虚轴映射到H(s)上某一条曲线上而这条曲线必为闭合曲线，绕点为原点，这条曲线就是系统的幅相曲线，这条曲线的模值对应幅频特性，相角对应相频特性。<strong>特别说明一点，我们研究的系统是实际存在的系统，实际系统中极零点只能在s平面实轴上或者共轭出现。</strong> 所以可以得到$\omega=0-&gt;\infty$与$\omega=0-&gt;-\infty$的曲线是关于实轴对称的。根据所知如果在s平面的右侧存在极点那么系统将会不稳定。<strong>再假设一个前提条件，只研究$H(s)$为有理真分式的情况。</strong> 如果$H(s)$在s平面右侧只有一个零点，那么将s平面虚轴，方向$-\infty$到$\infty$，在H(s)上的映射曲线将绕着原点顺时针旋转一周，辐角减小$2\pi$。如果s平面右侧有一个极点和一个零点，那么将s平面虚轴，方向$-\infty$到$\infty$，H(s)辐角不发生任何变化。</li>
-</ul>
-<p>所以应用这种辐角求转移函数在s平面右半侧是否有极点是有条件的，即转移函数在右侧不能有零点。如果满足该条件，那么将s平面虚轴，方向$-\infty$到$\infty$，H(s)辐角增加$2n\pi$，右侧有n个极点。</p>
-<h2 id="闭环转移函数"><a href="#闭环转移函数" class="headerlink" title="闭环转移函数"></a>闭环转移函数</h2><p><strong>闭环满足：在开环情况下系统稳定，也就是说H(s)、G(s)在右半侧都没有极点。</strong> 研究1+G(s)H(s)的零点等价闭环函数极点。<br>$$A(s)=G.den(s)H.den(s)$$<br>$$B(s)=G.num(s)H.num(s)$$<br>$$G(s)H(s) = \frac{B(s)}{A(s)}$$<br>根据H(s)、G(s)在右半侧都没有极点。可知$A(s)$的根全部在左平面。那么将将s平面虚轴，方向$-\infty$到$\infty$，映射到G(s)H(s)平面曲线l上，曲线l如果顺时针绕原点n圈，那么G(s)H(s)在左半侧具有n个零点。<br>但其实我们关心的不是G(s)H(s)在左半有没有零点，而是1+G(s)H(s)在左半侧的零点数。这就需要了解一下坐标映射关系了。</p>
-<h2 id="坐标映射"><a href="#坐标映射" class="headerlink" title="坐标映射"></a>坐标映射</h2><p>假设有$x_1o_1y_1$平面，$x_2o_2y_2$平面以$x_1o_1y_1$平面的$(a_{x1},b_{y1})$做为原点，那么$x_2o_2y_2$与$x_1o_1y_1$的映射关系有：<br>$$(x_2,y_2) = (x_1,y_1) - (a_{x1},b_{y1})$$<br>$(a_{x1},b_{y1})$，$(x_1,y_1)$向量是在$x_1o_1y_1$平面所表述的，$(x_2,y_2)$ 向量在$x_2o_2y_2$平面的表述。</p>
-<p>$$G(s)H(s) + (1,0) = 1 + G(s)H(s)$$<br>G(s)H(s)为移动后的平面，原平面向右移动1，就是G(s)H(s)平面，那么将G(s)H(s)平面向左移动1就是1+G(s)H(s)平面。</p>
-<p>$1+G(s)H(s)$平面原点在$G(s)H(s)$平面为$(-1,j0)$，我们要知道的是，s平面虚轴在$1+G(s)H(s)$平面内的映射曲线是否绕$1+G(s)H(s)$平面原点旋转，也就是说s平面虚轴在$G(s)H(s)$平面的映射是否绕$(-1,j0)$旋转。</p>
-<h2 id="对数奈氏稳定性判断"><a href="#对数奈氏稳定性判断" class="headerlink" title="对数奈氏稳定性判断"></a>对数奈氏稳定性判断</h2><p>在前三章我们了解到如果对含参系统进行稳定性判断，利用变增益查看闭环根轨迹确定。但使用根轨迹是有前提条件的，即转移函数为有理真分式。如果转移函数不是这种形式那么不能采用根轨迹。采用幅相曲线，奈氏稳定性法则判断。奈氏法则判断GH幅相曲线穿过(-1,j0)点左侧过实轴次数。</p>
-<h2 id="截止频率"><a href="#截止频率" class="headerlink" title="截止频率"></a>截止频率</h2><p>在幅相图中，因为要判断幅相曲线是否绕(-1,j0)点，所以$|G(s)H(s)|$幅度在$\phi(\theta)$在$(2k+1)\pi$相角处是否大于小于1，就显得格外重要。<br>$$|G(j\omega _c)H(j\omega _c)| = 1$$<br>$$A(j\omega _c) = 20lg|G(j\omega _c)H(j\omega _c)| = 0$$<br>$\omega _c$称为截止频率。<br>在$G(j\omega)H(j\omega)$相频图上假设几个点，$\omega_1 &lt; \omega _c &lt;\omega _2$, $\omega_1 = \omega_2 = -\pi$。</p>
-<p>如果$|G(j\omega _1)H(j\omega _1)|$、$|G(j\omega_2)H(j\omega _2)|$都大于1，那么$G(j\omega)H(j\omega)$幅相线不会绕(-1,j0)点。</p>
-<p>如果$|G(j\omega _1)H(j\omega _1)|$、$|G(j\omega_2)H(j\omega _2)|$都小于1，那么$G(j\omega)H(j\omega)$幅相线不会绕(-1,j0)点。</p>
-<p>如果$|G(j\omega _1)H(j\omega _1)|$、$|G(j\omega_2)H(j\omega _2)|$一个大于1，一个小于1，那么$G(j\omega)H(j\omega)$幅相线绕(-1,j0)点。</p>
-<p>考虑临界稳定的情况，当GH幅相曲线过(-1,j0)点时，系统处于边界稳定。如果$|G(j\omega _c)H(j\omega _c)| = 1$恰好相角也是$(2k+1)\pi$，那么系统边界稳定。如果GH曲线在相角$(2k+1)\pi$处，恰好$|G(j\omega)H(j\omega)| = 1$那么系统也处在边界稳定。这两者也对应着相角裕度和幅值裕度。</p>
-<h2 id="相角裕度-gamma"><a href="#相角裕度-gamma" class="headerlink" title="相角裕度 $\gamma$"></a>相角裕度 $\gamma$</h2><p>在截止频率处有$|G(j\omega _c)H(j\omega _c)| = 1$，GH幅相曲线在$\omega _c$处的相角为$\Phi(j\omega _c)$。<br>$$\gamma = \Phi(j\omega _c) + \pi$$<br>也就是说如果在截止频率$\omega _c$处，相角再偏移 $-\gamma$ 的话系统处于临界稳定。</p>
-<h2 id="幅值裕度-h"><a href="#幅值裕度-h" class="headerlink" title="幅值裕度 $h$"></a>幅值裕度 $h$</h2><p>在相角$\omega _h = (2k+1)\pi$处，GH幅相曲线的幅度为：$A(j\omega）= |G(j\omega _h)H(j\omega _h)|$。<br>$$h = \frac{1}{A(j\omega _h)} = \frac{1}{|G(j\omega _h)H(j\omega _h)|}$$<br>也就是说，如果在相角$(2k+1)\pi$处的GH幅度再增加 $h$ 倍，那么系统处于临界稳定。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自动控制原理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">频域分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/自动控制原理//" class="article-tag-list-link color2">自动控制原理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自动控制原理/自动控制前三章总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%89%8D%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/">自动控制原理</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%89%8D%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2021-11-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一二三章总结"><a href="#一二三章总结" class="headerlink" title="一二三章总结"></a>一二三章总结</h1><p>主要研究在线性时不变系统下的响应。从物理模型列出微分方程，在通过微分方程列出转移函数。从物理模型到转移函数不是该课程重点，研究起点是转移函数。具体来说研究有理真分式的转移函数。<strong>疑点：不是有理真分式的转移函数是物理不可实现的吗？离散系统是物理不可实现的。</strong> 根据信号系统的知识，有理真分式转移函数的性质，可以通过它的极零图加一个增益系数完全表示。通过系统转移函数的极零图，可以确定如下几个性质：</p>
-<ul>
-<li>冲激响应模式（积分就是阶跃响应），根据信号系统所学直接求出</li>
-<li>系统的固有频率，极点就是系统频率</li>
-<li>高阶系统的主频率，n阶系统存在n个极点（假设系统没有重根且满足稳定性，那么系统存在共轭对称极点或实轴极点），距离虚轴远的极点对系统的影响相对较小，因为该极点对应的冲激响应衰减很快，距离虚轴近的极点是系统的主极点，可以通过低阶系统近似表示。还可以通过在极点附近增加零点，来减小该极点对冲激响应的影响。<strong>偶极子</strong>。</li>
-<li>通过极点向量的角度（与实轴的角度）可以得出系统的阻尼比（$\zeta = cos\phi=\frac{\sigma}{\sqrt{\sigma ^2 + \omega ^2}}$），通过这个公式可以得出，如果确定了系统的阻尼比，那么就确定了系统极点的范围（s平面左半侧，一个实轴对称的扇形区域，扇形角度：$\theta=2arccos \zeta$）。<strong>疑问：多个共轭对称极点的阻尼比？</strong></li>
-<li>根据信号系统知识，通过系统极零点分布可以大致判断系统的频率特性（幅频特性，相频特性），全通系统：极零点关于虚轴对称，可用于调节系统响应的相位。最小相移系统：确定了幅频特性后，将零点位置设计到左平面，系统对相位的影响最小。</li>
-<li>增加零点对系统的影响可以从留数定理的角度考虑，当增加系统零点（假设原来分子为1），如果由极点和新加入的零点距离特别近，那么这个留数指数幅度会很小，所以该留数对系统影响很小。也不能就想当然的认为增加零点就能改善系统的动态性能。如果加入零点相对于该留数距离大于1，那么新加入的零点幅度会超过原来的指数幅度，这会增加该留数的影响。还有一点就是如果增加一个距离原点非常近的零点，那么系统的稳态增益就会很小（<strong>导致超调量巨大</strong>），如果在输出端盲目增加放大器使其恢复原来的增益那么超调量会非常大。</li>
-</ul>
-<p>自动控制主要研究目的是：转移函数能不能对输入信号进行跟踪，以及追踪过程中的性质（动态指标），追踪稳定后的性质（静态指标）。研究的输入信号分为三种：阶跃输入、斜坡输入、加速度输入。其他复杂信号转换为这三个信号后再讨论，或利用信号系统知识直接求解。</p>
-<p>转移函数能不能对输入信号进行追踪，利用拉普拉斯变换的终值定理 $sT(s)R(s)|_{s-&gt;0}$，终值定理有使用条件（拉氏变换收敛域包含虚轴），而能不能对阶跃、斜坡、加速度信号追踪取决于系统的零<strong>零点</strong>个数，n个零<strong>零点</strong>称为n型系统。0型系统可以追踪阶跃，1型系统可以追踪阶跃、斜坡，2型系统可以追踪阶跃、斜坡、加速度。</p>
-<h2 id="系统指标"><a href="#系统指标" class="headerlink" title="系统指标"></a>系统指标</h2><p>系统对于输入的响应可以大致分为两种：动态过程，稳态过程。这两个过程各自对应了一些指标。</p>
-<h3 id="系统动态指标"><a href="#系统动态指标" class="headerlink" title="系统动态指标"></a>系统动态指标</h3><ul>
-<li>延迟时间 $t_d$，响应达到终值一半的时间。</li>
-<li>上升时间 $t_r$，响应第一次达到终值 90% 的时间。</li>
-<li>峰值时间 $t_p$，响应超过终值达到第一个峰值的时间，冲激响应的第一个过零点时间。</li>
-<li>调节时间 $t_s$，响应持续达到终值 5% 或 2% 范围内的时间。</li>
-<li>超调量 $\sigma %$，响应最大值减终值与终值的比值，冲激响应第一个半周期（零到第一个过零点）积分与终值比值。</li>
-</ul>
-<h3 id="二阶系统动态指标计算"><a href="#二阶系统动态指标计算" class="headerlink" title="二阶系统动态指标计算"></a>二阶系统动态指标计算</h3><ul>
-<li>延迟时间 $t_d$，当$0&lt;\zeta &lt;1$时，$$t_d = \frac{1+0.7\zeta}{\omega _n}$$<br>$\omega _n$是极点到原点的距离。</li>
-<li>上升时间 $t_r$<br>$$t_r = \frac{\pi - \beta}{\omega _d}$$<br>$\omega _d$是极点虚部,$\beta$极点相角。</li>
-<li>峰值时间 $t_p$<br>$$t_p = \frac{\pi}{\omega _d}$$</li>
-<li>调节时间 $t_s$<br>$$t_s = \frac{3.5}{\sigma}\tag{5%}$$<br>$$t_s = \frac{4.4}{\sigma}\tag{2%}$$<br>$\sigma$,极点实部<strong>只考虑稳定系统，取绝对值</strong> 。</li>
-<li>超调量<br>$$\sigma % = e^{-\frac{\sigma\pi}{w_d}} \times 100 %$$</li>
-</ul>
-<p><strong>自我总结：根据能量守恒定理，无源网络冲激响应的能量与冲激信号的能量相同，从这里也可以看出，延迟时间、上升时间、峰值时间、调节时间大概成正相关，而这些时间与超调量负相关。</strong></p>
-<h3 id="系统极零图与动态指标的关系"><a href="#系统极零图与动态指标的关系" class="headerlink" title="系统极零图与动态指标的关系"></a>系统极零图与动态指标的关系</h3><p>还不太清楚，根据信号系统所学可以得出：</p>
-<ul>
-<li>极点距离虚轴越近，延迟时间、上升时间、峰值时间越小。但调节时间越长、超调量越大。距离虚轴近容易使得系统不稳定。</li>
-<li>距离实轴越近，超调次数越少。</li>
-</ul>
-<h3 id="系统静态指标"><a href="#系统静态指标" class="headerlink" title="系统静态指标"></a>系统静态指标</h3><ul>
-<li>系统静态误差</li>
-<li>扰动对系统的影响</li>
-</ul>
-<h2 id="一阶、二阶、高阶系统"><a href="#一阶、二阶、高阶系统" class="headerlink" title="一阶、二阶、高阶系统"></a>一阶、二阶、高阶系统</h2><p>研究阶跃输入、斜坡输入、加速度输入的系统响应，书里面列举了一些处理方法以及一些系数对应的物理关系，但感觉公式记不住、没必要记，了解系统极零图对响应的影响即可，设计系统是肯定是利用matlab的。把握底层逻辑，无需记忆太多的公式。</p>
-<h2 id="稳态误差"><a href="#稳态误差" class="headerlink" title="稳态误差"></a>稳态误差</h2><p>自控系统要求输出追踪输入，所以误差：$E(s)=R(s)-H(s)C(s)$，输出由输入信号控制所以误差信号与输出无关，误差转移函数：<br>$$\Phi_e(s) = \frac{1}{1+G(s)H(s)}$$<br>这个公式也可以通过流图化简得到（消除自环节点）。系统是否具备结构性误差由开环函数的零<strong>极点</strong> （闭环函数零<strong>零点</strong> ）个数决定。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -664,7 +195,7 @@
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -677,144 +208,17 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/24/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%89%8D%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-系统时域分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/">系统时域分析</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2021-11-12T02:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>线性系统时域求解主要利用卷积积分。难点是<strong>理解卷积</strong>和<strong>求解冲激响应</strong>。如果已知系统的冲激响应那么利用卷积求系统对信号的响应不受任何条件限制，也就是说卷积积分求响应限制条件少。</p>
-<p>以下分两个部分介绍时域求解响应，<strong>卷积积分</strong>、<strong>冲激响应</strong>。</p>
-<h2 id="卷积积分"><a href="#卷积积分" class="headerlink" title="卷积积分"></a>卷积积分</h2><p>从直观的角度来所，世间万物所处的状态都与其历史状态和历史受力有关（排除极限世界，<strong>微观</strong>、<strong>宏观</strong>）。例如：你现在资产与你历史资产、每月盈余有关。汽车当前的位置与初始位置、每一时刻的加速度有关。等等一切现象好像都可以总结为这种模式，即当前状态与初始状态、过程受力相关（<strong>不要理解为物理受力了，博主词穷了😂！</strong>）。线性系统更是如此了。线性系统除了以上属性外还有一个最重要的特性：<strong>线性</strong>（😂好像和没说一样）。根据线性的定义可以得出以下结论：</p>
-<p>设：<br>$$e_1(t)-&gt;r_1(t)$$<br>$$e_2(t)-&gt;r_2(t)$$<br>得：<br>$$k_1e_1(t)-&gt;k_1r_1(t)$$<br>$$k_2e_2(t)-&gt;k_2r_2(t)$$<br>$$k_1e_1(t) + k_2e_2(t)-&gt;k_1r_1(t) + k_2r_2(t)$$</p>
-<p>由此联想一种线性系统（最后一次用全称了，以下称为<strong>系统</strong>）与“<strong>输入信号</strong>”无关求响应的方法。先求得系统对单位信号的响应，然后用当前信号的幅值乘以单位信号响应不就是系统的响应嘛。问题是怎么样的信号才算是单位信号，单位信号应该具备什么样的特性？<br>$$e_u(\tau)-&gt;r_u(\tau)\tag{1}$$<br>$$e(0)e_u(\tau)-&gt;e(0)r_u(\tau)\tag{2}$$<br>$$e(t_0)e_u(\tau-t_0)-&gt;e(t_0)r_u(\tau-t_0)\tag{3}$$<br><em>公式1：单位信号对应的单位响应，假设单位信号是从0时刻开始的根据因果系统响应也必须从0时刻开始，0以前的响应为0或者0以前的响应是和0时刻开始的单位信号无关。从公式看就是 $\tau &gt; 0$。也就是说系统满足因果性，$\tau&lt;0$的响应不可能与$\tau &gt;0$的输入有关。</em></p>
-<p><em>公式2：根据上面的分析可以知道系统对0时刻的单位信号的响应$r(\tau)$，系统呈线性那么单位信号乘以0时刻输入信号的幅值，就可以得到输入信号只有0时刻起作用时系统的响应$e(0)r_u(\tau)$。</em></p>
-<p><em>公式3：在时间轴移动单位信号就可以得到输入信号不同时刻的“<strong>响应</strong>”（该响应是只有这一时刻输入信号有效的响应，输入信号其他时刻为0的响应）。根据线性规则也可以得到所有时刻的响应（<strong>只有该时刻有效的响应</strong>）包络都是一致的，只是幅度有差别，幅度为输入信号的大小。</em></p>
-<p>根据上面的分析，可以得出几点单位信号应该具备的特点，首先单位信号应该只在0时刻附近有效，其他时刻均为0，通过左右移动单位信号获得其他时刻的信号，写成数学表达式的话应该是：$\int _{-\infty} ^{+\infty} e_u(\tau)\cdot e(\tau)\mathrm{d} \tau = e(0)$.在根据这个表达式分析一下$e_u(t)$可得如下结果。</p>
-<p>$$<br>e_u(t)=\left{<br>\begin{aligned}<br>  +\infty,t = 0\<br>  0 ， t \neq 0<br>\end{aligned}\right.<br>$$</p>
-<p>$t \neq 0$时，$e_u(t) = 0$比较好理解，$t \neq 0$时，$e_u(t) = +\infty$是为了抵消$\mathrm{d} \tau$的影响。按照常规思想$e_u(0) = 1$比较完美，但如果是这样，$e_u(0)\cdot e(0) \mathrm{d} \tau = 0$，因为$e_u(0)$与$e(0)$都是有限值。</p>
-<p>在时间轴上移动单位信号的位置得到输入信号，$\int _{-\infty} ^{+\infty}e(\tau)\cdot e_u(\tau - t) \mathrm{d} \tau = e(t)$，从另一个角度来说就是将输入信号分解为无数个冲激信号（幅度有差别）。</p>
-<p><strong>下文采用标准的冲激函数、冲激响应表示：$\delta(t)$,$h(t)$.</strong></p>
-<p>假设系统的输入信号就是单位冲激信号，显然响应就是冲激响应。如图所示：</p>
-<p><img src="%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/%E5%86%B2%E6%BF%80%E5%93%8D%E5%BA%94.png" alt="alt"><br><img src="%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/%E5%86%B2%E6%BF%80%E5%93%8D%E5%BA%942.png" alt="alt"></p>
-<p>$$<br>e(t)=\left{<br>\begin{aligned}<br> \delta(t - t_0) ,t = 0 \<br> 2\cdot \delta(t - t_1) ，t = 2<br>\end{aligned}\right.<br>$$</p>
-<p>当系统的输入信号时两个冲激响应时的情况，分析$t=4.5$时系统的响应，由两部分叠加组成，$r(4.5) = h(4.5 - 0) + 2\cdot h(4.5 - 2)$，如果输入信号为$n$个冲激信号，那么响应就应该是：</p>
-<p>$$r(t) = \sum _{\tau=-\infty} ^{t}e(\tau)\cdot h(t-\tau)$$</p>
-<p>解释一下这个公式，$t$表示当前时刻，$r(t)$表示当前时刻的响应，当前时刻的响应与历史上每一个时刻相关，相关函数是$h(a)$，$a$表示当前时刻与那个具体历史时刻的距离（距离无穷远，相关性几乎为0，因果系统必须满足的条件），把历史上每个时刻和当前时刻的相关性值算出来，再累加起来就是当前时刻的响应。</p>
-<p>由此可以导出卷积积分公式：<br>$$r(t) = \int _{-\infty} ^{+\infty}e(\tau)\cdot h(\tau - t) \mathrm{d} \tau$$</p>
-<p>通过上述分析，可以得到一个理解卷积积分的角度，但大部分文章都将卷积积分看做：反褶，乘积，求和。如下图所示：<br><img src="%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/%E5%8D%B7%E7%A7%AF%E7%A7%AF%E5%88%86.png" alt="alt"></p>
-<p>不想解释了，想想很容易明白吧😂😂😂！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统，卷积积分，时域分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/信号与系统//" class="article-tag-list-link color1">信号与系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/12/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -836,10 +240,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

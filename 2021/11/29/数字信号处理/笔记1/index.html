@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>系统时域分析 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="系统时域分析">
-<meta property="og:url" content="http://example.com/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/index.html">
+  <meta name="description" content="目录中看到的几个问题 信号相关性？ 离散时间信号的能量谱密度 相位函数 反混叠滤波器 Haar变换 能量压缩 FIR有限长滤波器是不是只能完成滑动加权功能？ IIR无限长滤波器，IIR也可以看作一个系统，那么这个系统也需要满足收敛性，那么当时间趋于无穷时，IIR的冲激响应也必然趋于0，这和FIR又有什么区别呢？ DTF，滑动变换与切片变化的区别，都有什么特性，工程中该用哪个？第一章 信号和信号处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/11/29/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/%E7%AC%94%E8%AE%B01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目录中看到的几个问题 信号相关性？ 离散时间信号的能量谱密度 相位函数 反混叠滤波器 Haar变换 能量压缩 FIR有限长滤波器是不是只能完成滑动加权功能？ IIR无限长滤波器，IIR也可以看作一个系统，那么这个系统也需要满足收敛性，那么当时间趋于无穷时，IIR的冲激响应也必然趋于0，这和FIR又有什么区别呢？ DTF，滑动变换与切片变化的区别，都有什么特性，工程中该用哪个？第一章 信号和信号处理">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-12T02:15:37.000Z">
-<meta property="article:modified_time" content="2021-11-12T02:15:37.979Z">
+<meta property="article:published_time" content="2021-11-29T09:07:26.471Z">
+<meta property="article:modified_time" content="2021-11-18T07:43:54.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -152,27 +154,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-数字信号处理/笔记1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      系统时域分析
-    </h1>
-  
-
-        
-        <a href="/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/index.html" class="archive-article-date">
-  	<time datetime="2021-11-12T02:15:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="目录中看到的几个问题"><a href="#目录中看到的几个问题" class="headerlink" title="目录中看到的几个问题"></a>目录中看到的几个问题</h2><ul>
+<li>信号相关性？</li>
+<li>离散时间信号的能量谱密度</li>
+<li>相位函数</li>
+<li>反混叠滤波器</li>
+<li>Haar变换</li>
+<li>能量压缩</li>
+<li>FIR有限长滤波器是不是只能完成滑动加权功能？</li>
+<li>IIR无限长滤波器，IIR也可以看作一个系统，那么这个系统也需要满足收敛性，那么当时间趋于无穷时，IIR的冲激响应也必然趋于0，这和FIR又有什么区别呢？</li>
+<li>DTF，滑动变换与切片变化的区别，都有什么特性，工程中该用哪个？<h2 id="第一章-信号和信号处理"><a href="#第一章-信号和信号处理" class="headerlink" title="第一章 信号和信号处理"></a>第一章 信号和信号处理</h2>信号也已有一个或多个源产生，前一个为标量信号，后一个是向量信号。<br>自然产生的信号都是实信号，产生复信号需要用到<strong>希尔伯特变换</strong>，实数信号的傅里叶变换是一个，幅度偶对称，相位奇对称的复函数。傅里叶变换本质将一维时间信号，转换为二维时间、角速度信号（在复平面看就是一系列轨迹随时间，初始相角与幅度随$\omega$的同心圆，）。$\omega$、$-\omega$对应幅度相同，相角差$\pi$，所以如果存在一个系统能将$-\omega$或者$\omega$旋转$\pi$，那么就可以得到一个傅里叶变换只具有单边频谱（幅度增加一倍）的信号。</li>
+</ul>
+<p><strong>Amazing！</strong>正交频分复用，傅里叶变换将实信号转换为复数信号，将这个复数信号用复平面的极化坐标表示法，那么$\gamma = |H(j\omega)|,\theta = \phi$,可以在复平面用一个向量表示，从函数映射角度来说就是将一个复平面的虚轴$j\omega$向量映射到另一个复平面的向量。一般来说工程中只处理带限信号，那么这种映射就有了范围。经过公式推导可以的出两个信号可以同在一个频段传输。而且两个信号的相位并不会互相影响。</p>
+<p>范数：<br>$$||x||_p = ( \sum _{n=-\infty} ^{\infty} |x[n]|^p )^{\frac{1}{p}}$$</p>
+<p>范数1，绝对和，范数2，模方和根，范数无穷，模最大值。</p>
+<h3 id="抽样率变换"><a href="#抽样率变换" class="headerlink" title="抽样率变换"></a>抽样率变换</h3><p>对已知数字序列再进行数字抽样，如果抽样频率大于当前数字序列的采样频率，$R= \frac {F’}{F} &gt; 1$ 则称为内插，$R &lt; 1$ 则称为抽取。</p>
+<h3 id="牢记连续与离散的区别"><a href="#牢记连续与离散的区别" class="headerlink" title="牢记连续与离散的区别"></a>牢记连续与离散的区别</h3><p>$cos (\omega_c t)$与$cos(\omega_c n)$完全不一样，$n$只代表序列，不具备单位。$cos(\omega_c n)$呈现出的周期性和时间无关，只有确定了采样周期$T_s$才能确定$cos(\omega_c n)$离散信号的真正时间周期。$cos(\omega_c n)$只是具备周期的序列，而且这种周期不光呈现在序列上，也在离散频域上体现，$cos(\omega_c n)$与$cos((\omega_c*2\pi) n)$在序列上完全没有区别，所以说$cos(\omega_c n)$信号在频域上看，也是周期性的，$2\pi$就是频域上的周期。余弦信号是复指数信号的特例，所以离散复指数信号也是序列、频域均呈现周期性特质的信号。余弦信号，除了频域周期性外还具备角速度关于$\pi$对称的特性。例如：$cos(0.9\pi n)$与$cos(1.1\pi n)$在序列上完全没有区别。</p>
+<p>正弦信号，随着$\omega$从0增加到$\pi$，离散信号振动频率增加，$\omega$从$\pi$增加到$2\pi$，离散信号振动频率减小。$\pi$称为折叠频率。$\omega = 2\pi n$附近的信号称为低频信号，$\omega = \pi(2n + 1)$附近的信号称为高频信号。</p>
+
       
 
       
@@ -251,7 +255,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/29/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/%E7%AC%94%E8%AE%B01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,6 +267,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/11/29/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/bode%E5%9B%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/29/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -313,7 +336,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -405,6 +428,22 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">信号与系统，卷积积分，时域分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自动控制原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">根轨迹</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">频域分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">系统动态指标</a>
               </li>
             
             <div class="clearfix"></div>
